@@ -1,6 +1,12 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import './style/app.css';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+  useNavigate
+} from 'react-router-dom';
 import SideNav from './components/SideNav';
 import Keplr from './components/KeplrLogin';
 import Logging from './components/Logging';
@@ -61,6 +67,7 @@ const AppRouter = () => {
             </Route>
             <Route path="settings" element={<Settings />} />
             <Route path="help" element={<Help />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </SideNav>
       </div>
